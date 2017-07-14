@@ -1,0 +1,76 @@
+<!-- Sidebar Scroll Container -->
+<div id="sidebar-scroll">
+    <!-- Sidebar Content -->
+    <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
+    <div class="sidebar-content">
+        <!-- Side Header -->
+        <div class="side-header side-content bg-white-op">
+            <div class="btn-group pull-right" data-on-toggle="toggled(open)" data-uib-dropdown>
+
+            </div>
+            <a class="h5 text-white" ng-href="/" data-js-blur>
+                <i class="fa fa-circle-o-notch "></i> <span class="h4 font-w600 sidebar-mini-hide">w3gvault</span>
+            </a>
+        </div>
+        <!-- END Side Header -->
+
+        <!-- Side Content -->
+        <div class="side-content side-content-full">
+            <!-- Main navigation functionality (data-js-main-nav attribute is initialized in js/directives.js) -->
+            <ul ng-if="!userSession.token" class="nav-main" data-js-main-nav>
+                <li class="nav-main-heading"><span class="sidebar-mini-hide">Login</span></li>
+                <li >
+
+                </li>
+
+            </ul>
+
+            <ul class="nav-main" data-js-main-nav>
+                <li class="nav-main-heading"><span class="sidebar-mini-hide">Explore</span></li>
+                <li>
+                    <a href="base_pages_dashboard.php"><i class="fa fa-list"></i><span class="sidebar-mini-hide">All Replays</span></a>
+                </li>
+                <li>
+                    <a href="base_pages_dashboard.php"><i class="fa fa-trophy"></i><span class="sidebar-mini-hide">Tournament Replays</span></a>
+                </li>
+                <li>
+                    <a href="base_pages_dashboard.php"><i class="fa fa-line-chart"></i><span class="sidebar-mini-hide">Trending</span></a>
+                </li>
+                 <li>
+                    <a href="base_pages_dashboard.php"><i class="fa fa-users"></i><span class="sidebar-mini-hide">Users</span></a>
+                </li>
+            </ul>
+
+            <ul ng-if="userSession.token" class="nav-main" data-js-main-nav>
+                <li class="nav-main-heading"><span class="sidebar-mini-hide">Your Account</span></li>
+
+                <li>
+                    <a ng-href="/upload"><i class="fa fa-upload"></i><span class="sidebar-mini-hide">Upload</span></a>
+                </li>
+
+                <li>
+                    <a ng-href="/user/{{userSession.username}}"><i class="fa fa-user"></i><span class="sidebar-mini-hide">Profile</span></a>
+                </li>
+
+                <li>
+                    <a href="/settings"><i class="fa fa-cog"></i><span class="sidebar-mini-hide">Settings</span></a>
+                </li>
+                <li>
+                    <a ng-click="logout()" href="#"><i class="fa fa-sign-out"></i><span class="sidebar-mini-hide">Log Out</span></a>
+                </li>
+            </ul>
+
+            <ul class="nav-main" data-js-main-nav>
+                <li class="nav-main-heading"><span class="sidebar-mini-hide">About w3gvault</span></li>
+
+                <li>
+                    <a ng-href="/faq"><i class="fa fa-question-circle-o"></i><span class="sidebar-mini-hide">FAQ</span></a>
+                </li>
+            </ul>
+
+        </div>
+        <!-- END Side Content -->
+    </div>
+    <!-- Sidebar Content -->
+</div>
+<!-- END Sidebar Scroll Container -->

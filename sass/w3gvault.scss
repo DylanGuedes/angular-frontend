@@ -1,0 +1,195 @@
+$human: #003666;
+$orc: #a71930;
+$undead: #522d80;
+$nightelf: #006837;
+$detail-font: "Lato";
+
+body {
+  font-family: "Ubuntu";
+}
+
+.custom-nav .navbar-brand {
+  height: 80px;
+  padding-top:20px;
+}
+
+.custom-nav .nav >li >a {
+  padding-top: 30px;
+  font-size:18px;
+  padding-bottom: 30px;
+}
+.custom-nav .navbar-toggle {
+  padding: 10px;
+  margin: 25px 15px 25px 0;
+}
+
+.twitch-connect {
+    padding-top:24px !important;
+    padding-bottom:24px !important;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.user-list {
+  .list-group-item {
+    img {
+      width:75px;
+    }
+  }
+}
+
+.replay-card {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  font-family: $detail-font;
+  position:relative;
+  padding-top:100px;
+  display:block;
+
+  .map {
+    background-size:inherit;
+    width:100%;
+    position:absolute;
+    top:0;
+    min-height:100px;
+    -webkit-transition: all .5s ease;
+    transition: all .2s ease;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .content {
+    padding-top: 125px;
+    padding:10px;
+    z-index:999;
+  }
+
+  div.team{
+    font-size:14px;
+    margin-bottom:20px;
+  }
+
+  div.team:last-child{
+    margin-bottom:0px;
+  }
+}
+
+.replay-card:hover {
+  text-decoration: none !important;
+
+  .map {
+    min-height:150px;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .content {
+    opacity:1;
+  }
+
+}
+
+
+.tab-content {
+    border: 1px solid #ddd;
+    border-width: 0 1px 1px;
+    padding: 15px;
+}
+
+.replay-view {
+
+  table.replay-meta {
+      table-layout: fixed;
+    td {
+      overflow:hidden;
+      word-wrap: break-word;
+
+    }
+  }
+
+  .game-icon {
+      width: 30px;
+    }
+
+  .player {
+    border-bottom: 2px solid #eee;
+    &:last-child {
+      border: none;
+    }
+  }
+
+}
+
+.profile {
+  .avatar {
+    width:100px;
+    height:100px;
+  }
+}
+
+.no-border-top-radius{
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.race-image {
+    max-width:45px;
+}
+
+
+
+.bg-twitch {
+    background-color: #6441a5;
+}
+
+.bg-youtube {
+    background-color: #cd201f;
+}
+
+.bg-twitter {
+    background-color: #1da1f2;
+}
+
+.text-white {
+  color: white;
+}
+
+.pointer {
+    cursor:pointer;
+}
+
+.font-color-human{
+    color: $human;
+}
+
+.font-color-orc{
+    color: $orc;
+}
+
+.font-color-undead{
+    color: $undead;
+}
+
+.font-color-nightelf{
+    color: $nightelf;
+}
+
+.big-upload-button {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.main-wrapper {
+  margin-top: 90px;
+}
+
+$i: 100;
+@while $i > 0 {
+  .mt-#{$i} { margin-top: 1px * $i; }
+  .mb-#{$i} { margin-bottom: 1px * $i; }
+  .p-#{$i} {padding: 1px * $i; }
+  .font-w-#{$i*10} { font-weight: 10 * $i; }
+  $i: $i - 10;
+}

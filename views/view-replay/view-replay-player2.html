@@ -1,0 +1,82 @@
+<div class="panel-body" >
+    <div class="">
+        <div class="row">
+            <div class="col-md-1">
+                <span class="text-center font-w700 fa-stack fa-lg font-color-{{player.raceDetected}}">
+                  <i class="fa fa-square-o fa-stack-2x"></i>
+                  {{player.raceDetected[0].toUpperCase()}}
+                </span>
+            </div>
+            <div class="col-md-3">
+                <h4 class="font-w-300">{{player.name}}</h4>
+                <span class="text-muted">{{player.apm}} APM</span>
+            </div>
+            <div class="col-md-8">
+                <div class="col-md-4" ng-repeat="hero in player.heroes">
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <img class="" ng-src="/img/replays/heroes/{{hero.nameShort}}.png" alt="" style="height:35px">
+                        </div>
+                        <div class="col-xs-2" ng-repeat="ability in hero.abilities.summary" style="display:inline; position:relative;">
+                            <img class="" style="position:absolute;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" />
+                            <img ng-if="ability.level >= 2" style="position:absolute; top:10px;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" />
+                            <img ng-if="ability.level >= 3" style="position:absolute; top:20px;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="block-content collapse " uib-collapse="isCollapsed === true">
+        <div class="row push-10">
+            <div class="col-xs-3">
+                Units
+            </div>
+            <div class="col-xs-9">
+              <ul class="list-inline">
+                <li class="text-center" ng-repeat="unit in player.units.summary">
+                    <img class="game-icon" ng-src="/img/replays/units/{{unit.nameShort}}.png">
+                    <div class="font-w700">
+                        {{unit.count}}
+                    </div>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+        <div class="row push-10">
+            <div class="col-xs-3">
+                Upgrades
+            </div>
+            <div class="col-xs-9">
+              <ul class="list-inline">
+                <li class="text-center" ng-repeat="unit in player.upgrades.summary">
+                    <img class="game-icon" ng-src="/img/replays/upgrades/{{unit.nameShort}}.png">
+                    <div class="font-w700">
+                        {{unit.level}}
+                    </div>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+        <div class="row push-10">
+            <div class="col-xs-3">
+                Buildings
+            </div>
+            <div class="col-xs-9">
+              <ul class="list-inline">
+                <li class="text-center" ng-repeat="unit in player.buildings.summary">
+                    <img class="game-icon" ng-src="/img/replays/units/{{unit.nameShort}}.png">
+                    <div class="font-w700">
+                        {{unit.count}}
+                    </div>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-4 col-md-2" ng-repeat="user in users">
+    <a ng-href="/user/{{user.name}}">
+    <div class="panel panel-default text-center  fadeIn animated">
+      <div class="panel-body">
+        <img style="" class="img-responsive img-rounded img-thumbnail" ng-src="{{user.avatar}}">
+          <h4>{{user.displayName}}</h4>
+        </a>
+      </div>
+    </div>
+  </a>
+  </div>
+</div>

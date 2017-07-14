@@ -1,0 +1,67 @@
+<div class="row profile">
+    <div class="col-md-12 well">
+        <div class="" >
+            <div class="text-center">
+                <div class="animated fadeInDown">
+                    <img class="img-thumbnail avatar" ng-src="{{user.avatar}}" alt="">
+                </div>
+                <div class="push-30 animated fadeInUp">
+                    <h2 >{{user.displayName}}</h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="mt-30 text-center">
+            <div class="row text-uppercase">
+                <div class="col-xs-4 col-sm-4">
+                    <div class="font-w-700 animated fadeIn">Replays</div>
+                    <a class="h2 font-w-300 text-primary animated flipInX" >{{user.replayCount}}</a>
+                </div>
+                <div class="col-xs-4 col-sm-4">
+                    <div class="font-w-700 animated fadeIn">Followers</div>
+                    <a class="h2 font-w-300 text-primary animated flipInX">{{user.followerCount}}  </a>
+                </div>
+                <div class="col-xs-4 col-sm-4">
+                    <div class="font-w-700 animated fadeIn"><button class="btn btn-lg btn-primary" type="button" disabled>Follow</button></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div class="col-sm-4 col-md-3 mb-40" ng-repeat="replay in replays">
+                    <ng-include src="'replay-card.html'"></ng-include>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div ng-if="user.accounts.twitter" class="col-xs-4 col-md-6 mb-20">
+                        <a class="bg-twitter" ng-href="https://twitter.com/{{user.accounts.twitter}}">
+                          <div class="block-content bg-twitter p-20 text-center">
+                            <i class="fa fa-twitter fa-3x text-white"></i>
+                          </div>
+                        </a>
+                    </div>
+
+                    <div ng-if="user.accounts.youtube" class="col-xs-4 col-md-6 mb-20">
+                        <a ng-href="https://youtube.com/user/{{user.accounts.youtube}}">
+                            <div class="block-content bg-youtube text-center p-20">
+                                <i class="fa fa-youtube-square fa-3x text-white"></i>
+                              </div>
+                        </a>
+                    </div>
+
+                    <div ng-if="user.accounts.twitch" class="col-xs-4 col-md-6 mb-20">
+                        <a class="bg-twitch" ng-href="https://twitch.tv/{{user.accounts.twitch}}">
+                            <div class="block-content bg-twitch p-20 text-center">
+                                <i class="fa fa-twitch fa-3x text-white"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>

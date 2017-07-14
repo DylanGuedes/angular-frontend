@@ -1,0 +1,18 @@
+<input type="file" id="replay-upload" name="file" onchange="angular.element(this).scope().uploadReplay(this.files)" style="display:none" />
+<input type="file" id="replay-parse" name="file" onchange="angular.element(this).scope().parseReplay(this.files)" style="display:none" />
+<div class="row mt-100">
+  <a id="upload" ng-click="uploadReplayClick()" class="">
+    <div class="col-md-5 well pointer text-center big-upload-button">
+      <i class="fa fa-floppy-o fa-5x text-info"></i>
+      <h3>Upload and Publish</h3>Adds replay to your public collection, available for everyone to see
+      <i class="fa fa-4x fa-cog fa-spin " ng-show="uploadLoader"></i>
+    </div>
+  </a>
+  <a ng-click="parseReplayClick()" class="">
+    <div class="col-md-5 col-md-offset-1 well pointer text-center big-upload-button">
+      <i class="fa fa-area-chart fa-5x text-info"></i>
+      <h3>Parse only</h3>Temporarily parses the replay and shows the detail output to you.
+      <i class="fa fa-4x fa-cog fa-spin " ng-show="parseLoader"></i>
+    </div>
+  </a>
+</div>

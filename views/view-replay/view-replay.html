@@ -1,0 +1,42 @@
+<div class="row replay-view">
+  <div class="col-md-8">
+    <div class="panel panel-default" ng-repeat="team in replay.teams">
+      <div class="player" ng-include="'view-replay-player2.html'" ng-repeat="player in team">
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        APM
+      </div>
+      <div class="panel-body" style="min-height:350px;">
+        <div id="apmTimeChart" style="min-height:350px">
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        APM Distribution
+      </div>
+      <div class="panel-body" style="min-height:350px;">
+        <div id="apmBarChart" style="min-height:350px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 ">
+    <div ng-include="'view-replay-meta.html'">
+
+    </div>
+  </div>
+</div>
+<div class="row">
+
+
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-1">
+
+  </div>
+
+</div>

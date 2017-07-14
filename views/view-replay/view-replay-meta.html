@@ -1,0 +1,56 @@
+<div class="panel panel-default">
+    <div class="block-content">
+        <div class="map-image text-center mt-20">
+            <img ng-src="/img/replays/maps/{{replay.map}}.jpg" />
+            <h3>{{replay.map.toUpperCase()}}</h3>
+        </div>
+        <table class="table table-striped replay-meta">
+            <tr>
+                <td>Map</td>
+                <td>{{replay.map}}</td>
+            </tr>
+            <tr>
+                <td>Map Full Path</td>
+                <td>{{replay.mapLong}}</td>
+            </tr>
+            <tr>
+                <td>Host</td>
+                <td>{{replay.host}}</td>
+            </tr>
+            <tr>
+                <td>Saved By</td>
+                <td>{{replay.saver}}</td>
+            </tr>
+            <tr>
+                <td>Game Type</td>
+                <td>{{replay.gameType}}</td>
+            </tr>
+            <tr>
+                <td>Platform</td>
+                <td>{{replay.platform}}</td>
+            </tr>
+            <tr>
+                <td>Game Version</td>
+                <td>1.{{replay.version}}</td>
+            </tr>
+            <tr>
+                <td>Replay Owner</td>
+                <td><a ng-href="/user/{{replay.owner}}">{{replay.owner}}</a></td>
+            </tr>
+            <tr>
+                <td>Tournament</td>
+                <td>{{replay.tournament.name}}</td>
+            </tr>
+            <tr>
+                <td>Stage</td>
+                <td>{{replay.tournament.stage}}</td>
+            </tr>
+            <tr>
+
+            </tr>
+
+        </table>
+        <a ng-if="replay.downloads >= 0" class="btn btn-primary btn-block no-border-top-radius text-center" ng-href="/api/replay/{{replay._id}}/download?vanilla=true" target="_blank">Download .w3g (Vanilla)</a>
+        <a ng-if="replay.downloads >= 0 && replay.platform == 'netease'" class="btn btn-secondary btn-block no-border-top-radius text-center" ng-href="/api/replay/{{replay._id}}/download" target="_blank">Download .nwg (Netease)</a>
+    </div>
+</div>

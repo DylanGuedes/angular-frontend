@@ -1,0 +1,59 @@
+<div class="block">
+    <div class="block-header">
+        <span class="pull-right">
+            <span class="fa-stack  font-color-{{player.raceDetected.toLowerCase()}}">
+              <i class="fa fa-square-o fa-stack"></i>
+              <strong class="fa-stack-1x fa-stack-text">{{player.raceDetected[0].toUpperCase()}}</strong>
+            </span>
+        </span>
+        <h3 class="font-w-300">{{player.name}}</h3>
+        <div class="text-muted">{{player.apm}} APM</div>
+    </div>
+    <div class="block-content block border-t tab-content">
+        <div class="tab-pane row active" id="herotab{{player.color}}">
+            <div class="col-xs-4 text-center" ng-repeat="hero in player.heroes" ng-if="hero.level >=1">
+                <div class="">
+                    <img class="" style="width:20%;" ng-src="/img/replays/heroes/{{hero.nameShort}}.png" alt="">
+                </div>
+                <div class="font-w600 push-5-t">{{hero.name}}</div>
+                <div style="display:block;">
+                    <span class="font-w400 text-muted"><small>Level {{hero.level}}</small></span>
+                </div>
+                <div class="row push-10-t">
+                    <div class="col-xs-1" ng-class="{'col-xs-offset-2':hero.abilities.summary.length==2 && $index==0}" ng-repeat="ability in hero.abilities.summary" style="display:inline-block; position:relative; height:60px">
+                        <img class="" style="position:absolute;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" />
+                        <img ng-if="ability.level >= 2" style="position:absolute; top:10px;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" />
+                        <img ng-if="ability.level >= 3" style="position:absolute; top:20px;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" />
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="tab-pane row" id="unittab{{player.color}}">
+            <div class="col-xs-12">
+                <div class="pull-left" ng-repeat="unit in player.units.summary">
+                    <img class="" style="max-width:35px" ng-src="/img/replays/units/{{unit.nameShort}}.png" />
+
+                    <div class="text-center"><span class="label label-info">{{unit.count}}</span></div>
+                </div>
+            </div>
+            <div class="col-xs-12 push-10-t">
+                <div class="pull-left" ng-repeat="upgrade in player.upgrades.summary">
+                    <img class="" style="max-width:35px" ng-src="/img/replays/upgrades/{{upgrade.nameShort}}.png" />
+                    <div class="text-center"><span class="label label-info">{{upgrade.level}}</span></div>
+                </div>
+            </div>
+
+        </div>
+        <ul class="nav nav-tabs push-10-t" data-js-tabs>
+            <li class="active">
+                <a ng-href="#herotab{{player.color}}">Heros</a>
+            </li>
+            <li class="">
+                <a ng-href="#unittab{{player.color}}">Details</a>
+            </li>
+        </ul>
+    </div>
+    <hr ng-if="!$index">
+</div>

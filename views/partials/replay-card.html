@@ -1,0 +1,15 @@
+<a class="replay-card zoomIn animated" ng-href="/replay/{{replay._id}}">
+  <div class="map" background-image="/img/replays/maps/{{replay.map}}.jpg">
+
+  </div>
+
+  <div class="content">
+    <div class="team" ng-repeat="team in replay.teams">
+        <div class="player" ng-repeat="player in team">
+          <span class="font-color-{{player.raceDetected}}">{{player.name}}</span>
+          <span class="race pull-right">{{player.raceDetected[0].toUpperCase()}}</span>
+        </div>
+  </div>
+
+</div>
+</a>

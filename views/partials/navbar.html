@@ -1,0 +1,33 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavbarCtrl">
+      <div class="container custom-nav">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/img/w3gvault.png"/></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav">
+               <li class=""><a href="#">Search</a></li>
+
+               <li class=""><a href="/users">Users</a></li>
+             </ul>
+             <ul class="nav navbar-nav navbar-right">
+               <li ng-if="!userSession.username">
+                 <a ng-href="{{twitchAuthURL}}" class="twitch-connect">
+                  <img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png"  >
+                </a>
+              </li>
+              <li ng-if="userSession.username"><a href="/upload">Upload</a></li>
+              <li ng-if="userSession.username">
+                <a class ="" ng-href="/settings" >
+                 Account Settings
+               </a>
+             </li>
+             </ul>
+           </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>

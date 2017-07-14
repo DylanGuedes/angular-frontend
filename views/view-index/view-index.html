@@ -1,0 +1,29 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Parse and Share your Warcraft Replays!</h1>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6 col-lg-2 mb-40" ng-repeat-start="replay in replays">
+    <ng-include src="'replay-card.html'"></ng-include>
+  </div>
+  <div ng-repeat-end ng-if="($index+1) % 6 === 0 && $index > 0" class="clearfix"></div>
+</div>
+<div class="container text-center">
+  <hr>
+  <div class="row text-center">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+      <a href="https://github.com/anxietypb/w3gvault" target="_blank">GitHub</a>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,81 @@
+<div class="content bg-gray-lighter">
+  <div class="row items-push">
+    <div class="col-sm-7">
+      <h1 class="page-heading">
+                Settings
+            </h1>
+    </div>
+
+  </div>
+
+    <uib-tabset active="activeForm" justified="true" >
+      <uib-tab index="0" heading="Personal">
+        <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 form-horizontal" >
+          <div class="form-group">
+            <div class="col-xs-6">
+              <label>Username</label>
+              <input class="form-control input-lg" type="email" id="profile-name" name="profile-name" placeholder="Username" ng-model="settings.name" ng-disabled="true">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+              <label for="profile-email">Email Address</label>
+              <input class="form-control input-lg" type="email" id="profile-email" name="profile-email" placeholder="Enter your email.." ng-model="settings.email" ng-disabled="settings.provider !='local'" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+      </uib-tab>
+      <uib-tab index="1" heading="Social Accounts">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3 form-horizontal">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label for="profile-password">YouTube</label>
+                <input class="form-control input-lg" type="text" id="profile-youtube" ng-model="settings.accounts.youtube" name="profile-youtube">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label for="profile-password-new">Twitter</label>
+                <input class="form-control input-lg" type="text" id="profile-twitter" ng-model="settings.accounts.twitter" name="profile-twitter">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label for="profile-password-new">Twitch</label>
+                <input class="form-control input-lg" type="text" id="profile-twitch" name="profile-twitch" ng-model="settings.accounts.twitch">
+              </div>
+            </div>
+            <button class="btn btn-sm btn-primary" ng-click="update()" type="submit" promise-btn><i class="fa fa-check push-5-r"></i> Save Changes</button>
+          </div>
+        </div>
+      </uib-tab>
+      <uib-tab index="2" heading="Security">
+        <div class="row items-push">
+          <div class="col-sm-6 col-sm-offset-3 form-horizontal">
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label for="profile-password">Current Password</label>
+                <input class="form-control input-lg" type="password" id="profile-password" name="profile-password" ng-disabled="settings.provider !='local'">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label for="profile-password-new">New Password</label>
+                <input class="form-control input-lg" type="password" id="profile-password-new" name="profile-password-new" ng-disabled="settings.provider !='local'">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-xs-12">
+                <label for="profile-password-new-confirm">Confirm New Password</label>
+                <input class="form-control input-lg" type="password" id="profile-password-new-confirm" name="profile-password-new-confirm" ng-disabled="settings.provider !='local'">
+              </div>
+            </div>
+          </div>
+        </div>
+      </uib-tab>
+    </uib-tabset>
+</div>

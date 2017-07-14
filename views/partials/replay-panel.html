@@ -1,0 +1,83 @@
+<a class="block block-link-hover2" ng-href="/replay/{{replay._id}}">
+
+    <div class="block-content block-content-full">
+        <div class="row text-center" style="margin: 0px -14px;">
+            <div class="col-xs-4">
+                <div class="">
+                    <div class="img-container">
+                        <div class="text-center">
+                            <img class="img-responsive" ng-src="/img/replays/maps/{{replay.map}}.jpg" />
+                            <div class="img-options">
+                                <div class="img-options-content">
+                                    <h3 class="font-w400 text-white push-5">{{replay.map}}</h3>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-block btn-square btn-primary">Download</button>
+                </div>
+            </div>
+            <div class="col-xs-6 col-xs-offset-1">
+                <div class="row">
+
+                    <div class="block block-rounded block-link-hover3 col-xs-12 text-primary" ng-repeat="team in replay.teams">
+                        <div class="block-content block-content-full clearfix   border-black-op">
+                            <div class="" ng-repeat="player in team">
+                                <div class="block-content-full clearfix">
+                                    <div class="pull-right">
+                                        <span ng-if="player.raceDetected=='human'" class="fa-stack fa-lg font-color-human">
+                                                  <i class="fa fa-square-o fa-stack-2x"></i>
+                                                  H
+                                                </span>
+                                        <span ng-if="player.raceDetected=='orc'" class="fa-stack fa-lg font-color-orc">
+                                                  <i class="fa fa-square-o fa-stack-2x"></i>
+                                                  O
+                                                </span>
+                                        <span ng-if="player.raceDetected=='undead'" class="fa-stack fa-lg font-color-undead">
+                                                  <i class="fa fa-square-o fa-stack-2x"></i>
+                                                  U
+                                                </span>
+                                        <span ng-if="player.raceDetected=='nightelf'" class="fa-stack fa-lg font-color-nightelf">
+                                                  <i class="fa fa-square-o fa-stack-2x"></i>
+                                                  N
+                                                </span>
+                                    </div>
+                                    <div class="pull-left ">
+                                        <div class="font-w600 push-5" style="font-size:18px;">{{player.name}}</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block-content  border-t">
+        <div class="row items-push text-center">
+            <div class="col-xs-3">
+                <div class="push-5"><i class="fa fa-cloud-download fa-2x"></i></div>
+                <div class="h5 font-w300 text-muted">{{replay.downloads}} Downloads</div>
+            </div>
+            <div class="col-xs-3">
+                <div class="push-5"><i class="fa fa-gamepad fa-2x"></i></div>
+                <div class="h5 font-w300 text-muted">{{replay.platform}}</div>
+            </div>
+            <div class="col-xs-3">
+                <div class="push-5"><i class="fa fa-trophy fa-2x"></i></div>
+                <div class="h5 font-w300 text-muted">{{replay.tournament.name || "-"}}</div>
+            </div>
+            <div class="col-xs-3">
+                <div class="push-5"><i class="fa fa-calendar fa-2x"></i></div>
+                <div class="h5 font-w300 text-muted"><span am-time-ago="replay.uploadDate"></span></div>
+            </div>
+        </div>
+    </div>
+</a>
