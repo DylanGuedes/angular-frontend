@@ -2,7 +2,7 @@
     <div class="">
         <div class="row">
             <div class="col-md-1">
-                <span class="text-center font-w700 fa-stack fa-lg font-color-{{player.raceDetected}}">
+                <span class="text-center font-w700 fa-stack fa-lg font-color-{{player.raceDetected}}" title="{{player.raceDetected}}">
                   <i class="fa fa-square-o fa-stack-2x"></i>
                   {{player.raceDetected[0].toUpperCase()}}
                 </span>
@@ -15,12 +15,12 @@
                 <div class="col-md-4" ng-repeat="hero in player.heroes">
                     <div class="row ">
                         <div class="col-xs-3">
-                            <img class="" ng-src="/img/replays/heroes/{{hero.nameShort}}.png" alt="" style="height:35px">
+                            <img class="" ng-src="/img/replays/heroes/{{hero.nameShort}}.png" title="{{hero.name}}" alt="" style="height:35px">
                         </div>
                         <div class="col-xs-2" ng-repeat="ability in hero.abilities.summary" style="display:inline; position:relative;">
-                            <img class="" style="position:absolute;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" />
-                            <img ng-if="ability.level >= 2" style="position:absolute; top:10px;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" />
-                            <img ng-if="ability.level >= 3" style="position:absolute; top:20px;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" />
+                            <img class="" style="position:absolute;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" title="Level 1 {{ability.name}}"/>
+                            <img ng-if="ability.level >= 2" style="position:absolute; top:10px;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" title="Level 2 {{ability.name}}" />
+                            <img ng-if="ability.level >= 3" style="position:absolute; top:20px;width:100%;display:inline-block; filter: grayscale(.5);" ng-src="/img/replays/abilities/{{ability.nameShort}}.png" title="Level 3 {{ability.name}}" />
                         </div>
 
                     </div>
